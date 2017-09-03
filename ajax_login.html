@@ -1,0 +1,52 @@
+<!DOCTY HTML>
+<html lang="en">
+   <head>
+   	<meta content="" charset="utf-8">
+   	<style>
+   	*{margin:0;padding:0;}
+   	.form{width:650px;height: 550px;border:1px solid #e1e1e1;-webkit-border-radius：5px;-moz-border-radius:5px;border-radius:5px;box-shadow: 1px 1px 5px #ccc;margin:50px auto;padding:50px 20px;font-size:16px;color: #333333;font-family: "微软雅黑",Microsoft Yahei;}
+   	ul li{list-style: none;height:40px;margin-bottom: 10px;}
+   	lable{width:120px;height:35px;float:left;margin-right: 15px;line-height:35px;text-align:right;}
+   	input{width: 250px;height:35px;line-height: 35px;border:1px solid #A0B4E1;border-radius:3px;float: left;padding:5px;}
+   	span{width:225px;height:35px;line-height:35px;font-size:12px;margin-left: 10px;color:red;display:inline-block;}
+   	button{width:250px;height:40px;border-radius:5px;border:1px solid #4098BA;background:#67B9D9;box-shadow:1px 1px 3px #7595DD;margin:40px 0 0 135px;font-size:16px;color:#ffffff;font-family: "微软雅黑",Microsoft Yahei;}
+   	</style>
+	<script>
+	function MyFunction(x){
+	x.style.border="1px solid orange";
+	x.style.background="pink";
+	}
+	function Myfunction2(y){
+	y.style.border="1px solid #A0B4E1";
+	y.style.background="white";
+	}
+	function MyFunction3(z){
+     var request=new XMLHttpRequest();
+	 request.open("POST","service.php?number=")
+	 request.send();
+	 request.onreadystatechange=function(){
+        if(request.readyState === 4){
+		  if(request.status === 200){
+             		  
+		  }else{
+		    alert("账号格式不正确，请重新输入")
+		  }
+		}  	 
+	 }
+	 
+	}
+	</script>
+   </head>
+   <body>
+   	 <div class="form">
+   	   <ul>
+        <li><lable>会员登录名</lable><input type="text" maxlength="37" name="username" onFocus="MyFunction(this)" onBlur="Myfunction2(this)" placeholder="请输入注册邮箱/手机号"/><span>3-18位中英文、数字、下划线</span></li>
+        <li><lable>密码</lable><input type="password" name="password" onFocus="MyFunction(this)" onBlur="Myfunction2(this)" placeholder="6-16位数字、字母或者字符组合" /><span>6-16位数字、字母或者字符组合</span></li>
+        <li><lable>重复输入密码</lable><input type="password" name="repassword"onfocus="MyFunction(this)" onBlur="Myfunction2(this)" /><span>请再次输入您的密码</span></li>
+        <li><lable>邮箱</lable><input type="text" name="email"onfocus="MyFunction(this)" onBlur="Myfunction2(this)" /><span>请输入正确的邮箱</span></li>
+        <li><lable>手机号</lable><input type="text" name="tel" onFocus="MyFunction(this)" onBlur="Myfunction2(this)" /><span>请输入正确的手机号</span></li>
+       </ul>
+       <button type="button">注册信息</button>
+   	 </div>     
+   </body>
+</html>
